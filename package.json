@@ -1,0 +1,12 @@
+{
+  "name": "my-npm-project",
+  "version": "1.0.0",
+  "description": "A simple npm project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
