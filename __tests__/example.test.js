@@ -1,4 +1,4 @@
-// example.test.js
+// example.test.js to test
 
 function add(a, b) {
   return a + b;
