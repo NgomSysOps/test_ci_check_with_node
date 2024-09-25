@@ -4,5 +4,5 @@ const fetchData = () => new Promise((resolve) => setTimeout(() => resolve('data'
 
 test('fetches data asynchronously', async () => {
   const data = await fetchData();
-  expect(data).toBe('data');
+  expect(data).toBe('datab');
 });
