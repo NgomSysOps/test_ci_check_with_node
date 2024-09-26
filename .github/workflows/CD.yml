@@ -16,7 +16,7 @@ jobs:
 
     environment:
       name: ${{ matrix.environment }}  # Use the matrix to name the environment
-      url: ${{ secrets.API_URL }}  # Use secrets for the API URL
+      url: https://app.${{ matrix.environment }}.com  # Use secrets for the API URL
 
     steps:
       - name: Checkout code
@@ -25,3 +25,4 @@ jobs:
       - name: Display Environment and Variables
         run: |
           echo "deploy  ${{ vars.APP_NAME }}" in ${{ matrix.environment }}"
+          echo "API: ${{ secrets.API_URL }}"
