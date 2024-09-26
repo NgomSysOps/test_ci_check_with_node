@@ -15,7 +15,7 @@ function calculateDifferenceAndQuotient(a, b, c) {
 }
 
 test('calculates (5 - 2) / 3 to equal 1', () => {
-  expect(calculateDifferenceAndQuotient(5, 2, 3)).toBe(11);
+  expect(calculateDifferenceAndQuotient(5, 2, 3)).toBe(1);
 });
 
 test('throws error when dividing by zero', () => {
