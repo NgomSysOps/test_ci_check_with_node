@@ -1,0 +1,27 @@
+name: Deploy to Dev and Prod
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Dev and Prod
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [dev, prod]  # Define your environments here
+
+    environment:
+      name: ${{ matrix.environment }}  # Use the matrix to name the environment
+      url: ${{ secrets.API_URL }}  # Use secrets for the API URL
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Display Environment and Variables
+        run: |
+          echo "deploy  ${{ vars.APP_NAME }}" in ${{ matrix.environment }}"
