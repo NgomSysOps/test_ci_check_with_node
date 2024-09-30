@@ -15,8 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:unit": "jest __tests__/unit",
-    "test:integration": "jest __tests__/integration",
+    "unit": "jest __tests__/unit",
+    "integration": "jest __tests__/integration",
     "eject": "react-scripts eject",
     "lint": "eslint src"
   },

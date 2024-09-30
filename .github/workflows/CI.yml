@@ -13,7 +13,7 @@ jobs:
         include:
         - language: javascript-typescript
           build-mode: none
-          
+
     name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
     permissions:
@@ -48,7 +48,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dev-test: [lint, test, test:unit, test:integration]
+        dev-test: [lint, test, unit, integration]
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -56,7 +57,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'  # Change the version to 18
+        node-version: '20'  # Change the version to 18
 
     - name: Install dependencies
       run: npm install
