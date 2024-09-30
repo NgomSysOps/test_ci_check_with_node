@@ -14,7 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "unit": "jest __tests__/unit",
     "integration": "jest __tests__/integration",
     "eject": "react-scripts eject",
