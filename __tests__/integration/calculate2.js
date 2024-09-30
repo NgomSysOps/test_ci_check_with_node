@@ -21,3 +21,5 @@ function subtract(a, b) {
   test('throws error when dividing by zero', () => {
     expect(() => calculateDifferenceAndQuotient(5, 2, 0)).toThrow("Cannot divide by zero");
   });
+  return a - b;
+}
