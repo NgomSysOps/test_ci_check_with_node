@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dev-test: [lint, unit, integration]
+        dev-test: [test , lint, unit, integration]
 
     steps:
     - name: Checkout code
