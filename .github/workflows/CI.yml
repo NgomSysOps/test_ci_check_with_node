@@ -44,11 +44,11 @@ jobs:
         category: "/language:${{matrix.language}}"
 
     
-  unit_tests:
+  tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dev-test: [lint, test, unit, integration]
+        dev-test: [lint, unit, integration]
 
     steps:
     - name: Checkout code
