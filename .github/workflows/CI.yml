@@ -49,7 +49,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dev-test: [test , unit, integration, lint]
+        dev-test: [lint, test , unit, integration]
 
     steps:
     - name: Checkout code
