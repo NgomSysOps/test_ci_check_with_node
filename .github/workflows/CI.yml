@@ -44,24 +44,39 @@ jobs:
       with:
         category: "/language:${{matrix.language}}"
 
-    
   tests:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: true  # Enable fail-fast for test matrix
       matrix:
-        dev-test: [lint, test , unit, integration]
+        dev-test: [lint, test, unit, integration]
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
 
+    - name: Cache Node.js modules
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'  # Change the version to 18
+        node-version: '20'  # More specific version range
 
     - name: Install dependencies
-      run: npm install
+      run: npm ci  # Faster, clean install
 
     - name: Run ${{ matrix.dev-test }}
       run: npm run ${{ matrix.dev-test }}
+
+    - name: Upload test results
+      if: failure()  # Upload test results only if any tests fail
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results
+        path: ./test-results
